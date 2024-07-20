@@ -5,9 +5,9 @@
     <title>Thymeleaf課題</title>
 </head>
 <body>
-    <h1>Thymeleaf課題</h1>
-    <h2>入力画面</h2>
-    <p>値を入力してください。</p>
+    <h1 th:text="#{content.title}"></h1>
+    <h2 th:text="#{content.h1}"></h2>
+    <p th:text="#{content.message}"></p>
     <th:block th:if="${param.previous} == null">
         <p></p>
     </th:block>
@@ -16,7 +16,7 @@
     </th:block>
     <form method="post" action="/output">
         <input type="text" name="val">
-        <button type="submit">送信</button>
+        <button type="submit" th:text="#{content.submit}"></button>
     </form>
 </body>
 </html>
